@@ -7,11 +7,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Plus ...
-import plus from './assets/plus.png';
+import plus from '/Users/kimhun/Documents/Ever Medical/React Native Mini Project 1/alamood-depression/assets/plus.png';
 
 // Font Awesome Icons...
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Platform } from 'react-native';
+
+// Import Screens from files
+
+import HomeScreen from './src/homepage';
+import SettingScreen from './src/setting_page';
 
 const Tab = createBottomTabNavigator();
 export default function  App() {
@@ -224,14 +229,14 @@ function EmptyScreen(){
   )
 }
 
-function HomeScreen(){
-  return(
-    <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-      <Text>Home</Text>
+// function HomeScreen(){
+//   return(
+//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
+//       <Text>Home</Text>
 
-    </View>
-  )
-}
+//     </View>
+//   )
+// }
 
 function DepressScreen(){
   return(
@@ -251,14 +256,14 @@ function TherapyScreen(){
   )
 }
 
-function SettingScreen(){
-  return(
-    <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-      <Text>Settings</Text>
+// function SettingScreen(){
+//   return(
+//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
+//       <Text>Settings</Text>
 
-    </View>
-  )
-}
+//     </View>
+//   )
+// }
 
 
 
