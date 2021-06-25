@@ -7,10 +7,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Font Awesome Icons...
 
-export default function HomeScreen(){
+export default function SettingScreen(){
     return(
         <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center'}}>
-            <Text>HomeScreen</Text>
+            <Text>Settings!</Text>
         </View>
     )
 }
