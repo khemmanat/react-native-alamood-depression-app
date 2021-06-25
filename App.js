@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component , useRef} from 'react';
-import { TouchableOpacity } from 'react-native';
-import { Animated, Dimensions, Image,StyleSheet, Text, View, Button } from 'react-native';
+import { Animated, Dimensions, Image,StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -17,6 +16,9 @@ import { Platform } from 'react-native';
 
 import HomeScreen from './src/homepage';
 import SettingScreen from './src/setting_page';
+import TherapyScreen from './src/therapy_page';
+import DepressScreen from './src/depression_page';
+import ActionScreen from './src/action_page';
 
 const Tab = createBottomTabNavigator();
 export default function  App() {
@@ -32,7 +34,7 @@ export default function  App() {
         style:{
           backgroundColor: '#D6ECCB',
           position: 'absolute',
-          bottom: 40,
+          bottom: 20,
           marginHorizontal: 20 ,
           // Max Height...
           height: 60,
@@ -59,16 +61,17 @@ export default function  App() {
           tabBarIcon: ({focused}) =>(
               <View style={{
                 // centring Tab Button...
-                position: 'absolute',
-                top: 20
+                alignItems: 'center',
+                justifyContent: 'center',
+                top: 15
               }}>
                 <FontAwesome5
                 name="home"
                 size={20}
                 color={focused ? 'red': 'gray'}
                 >
-
                 </FontAwesome5>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Home</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
@@ -86,16 +89,19 @@ export default function  App() {
           tabBarIcon: ({focused}) =>(
               <View style={{
                 // centring Tab Button...
-                position: 'absolute',
-                top: 20
+                alignItems: 'center',
+                justifyContent: 'center',
+                top: 15,
+
               }}>
                 <FontAwesome5
                 name="list-alt"
                 size={20}
                 color={focused ? 'red': 'gray'}
                 >
-
+                
                 </FontAwesome5>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Depression</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
@@ -113,10 +119,10 @@ export default function  App() {
           // Extra Tab Screen For Action Button...
         }
 
-        <Tab.Screen name={"ActionButton"} component={EmptyScreen} options={{
+        <Tab.Screen name={"ActionButton"} component={ActionScreen} options={{
           tabBarIcon: ({focused}) =>(
              
-            <TouchableOpacity>
+            <TouchableOpacity >
               <View style={{ 
                 width: 55,
                 height: 55,
@@ -141,8 +147,9 @@ export default function  App() {
           tabBarIcon: ({focused}) =>(
               <View style={{
                 // centring Tab Button...
-                position: 'absolute',
-                top: 20
+                alignItems: 'center',
+                justifyContent: 'center',
+                top: 15
               }}>
                 <FontAwesome5
                 name="laugh-beam"
@@ -151,6 +158,7 @@ export default function  App() {
                 >
 
                 </FontAwesome5>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Home</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
@@ -168,8 +176,9 @@ export default function  App() {
           tabBarIcon: ({focused}) =>(
               <View style={{
                 // centring Tab Button...
-                position: 'absolute',
-                top: 20
+                alignItems: 'center',
+                justifyContent: 'center',
+                top: 15
               }}>
                 <FontAwesome5
                 name="cog"
@@ -178,6 +187,7 @@ export default function  App() {
                 >
 
                 </FontAwesome5>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Home</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
@@ -196,7 +206,7 @@ export default function  App() {
         height: 2,
         backgroundColor: 'red',
         position: 'absolute',
-        bottom: 98,
+        bottom: 79,
         // Horizontal Padding = 20..
         left: 50,
         borderRadius: 20,
@@ -238,23 +248,23 @@ function EmptyScreen(){
 //   )
 // }
 
-function DepressScreen(){
-  return(
-    <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-      <Text>Depression</Text>
+// function DepressScreen(){
+//   return(
+//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
+//       <Text>Depression</Text>
 
-    </View>
-  )
-}
+//     </View>
+//   )
+// }
 
-function TherapyScreen(){
-  return(
-    <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-      <Text>Therapy</Text>
+// function TherapyScreen(){
+//   return(
+//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
+//       <Text>Therapy</Text>
 
-    </View>
-  )
-}
+//     </View>
+//   )
+// }
 
 // function SettingScreen(){
 //   return(
