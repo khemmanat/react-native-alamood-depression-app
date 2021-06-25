@@ -34,7 +34,7 @@ export default function  App() {
         style:{
           backgroundColor: '#D6ECCB',
           position: 'absolute',
-          bottom: 20,
+          bottom: 30,
           marginHorizontal: 20 ,
           // Max Height...
           height: 60,
@@ -95,7 +95,7 @@ export default function  App() {
 
               }}>
                 <FontAwesome5
-                name="list-alt"
+                name="stethoscope"
                 size={20}
                 color={focused ? 'red': 'gray'}
                 >
@@ -152,7 +152,7 @@ export default function  App() {
                 top: 15
               }}>
                 <FontAwesome5
-                name="laugh-beam"
+                name="briefcase-medical"
                 size={20}
                 color={focused ? 'red': 'gray'}
                 >
@@ -206,7 +206,7 @@ export default function  App() {
         height: 2,
         backgroundColor: 'red',
         position: 'absolute',
-        bottom: 79,
+        bottom: 88,
         // Horizontal Padding = 20..
         left: 50,
         borderRadius: 20,
@@ -238,43 +238,6 @@ function EmptyScreen(){
     </View>
   )
 }
-
-// function HomeScreen(){
-//   return(
-//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-//       <Text>Home</Text>
-
-//     </View>
-//   )
-// }
-
-// function DepressScreen(){
-//   return(
-//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-//       <Text>Depression</Text>
-
-//     </View>
-//   )
-// }
-
-// function TherapyScreen(){
-//   return(
-//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-//       <Text>Therapy</Text>
-
-//     </View>
-//   )
-// }
-
-// function SettingScreen(){
-//   return(
-//     <View style={{ flex: 1,justifyContent: 'center',alignItems: 'center'}}>
-//       <Text>Settings</Text>
-
-//     </View>
-//   )
-// }
-
 
 
 const styles = StyleSheet.create({
