@@ -158,7 +158,7 @@ export default function  App() {
                 >
 
                 </FontAwesome5>
-                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Home</Text>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Therapy</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
@@ -187,7 +187,7 @@ export default function  App() {
                 >
 
                 </FontAwesome5>
-                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Home</Text>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Settings</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
