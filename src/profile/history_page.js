@@ -7,11 +7,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Font Awesome Icons...
 
-export default function ProfileScreen(){
+export default function HistoryScreen(){
     return(
-        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#ECEAE4'}}>
+        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center', backgroundColor: '#D4F0F0'}}>
             <Text>History</Text>
-            <Text>Notifications</Text>
         </View>
     )
 }
