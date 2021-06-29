@@ -9,8 +9,25 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export default function HomeScreen(){
     return(
-        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center'}}>
+        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#D6ECCB' }}>
             <Text>HomeScreen</Text>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    body:{
+        backgroundColor: '#D6ECCB',
+    },
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    button:{
+      alignItems: 'center',
+      backgroundColor: '#DDDDDD',
+      padding: 10,
+      marginBottom: 10
+    }
+  });

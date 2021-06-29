@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export default function DepressScreen(){
     return(
-        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center'}}>
+        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#FFCCB6'}}>
             <Text>Depress!</Text>
         </View>
     )

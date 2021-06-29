@@ -7,10 +7,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Font Awesome Icons...
 
-export default function SettingScreen(){
+export default function ProfileScreen(){
     return(
-        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center'}}>
-            <Text>Settings!</Text>
+        <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#ECEAE4'}}>
+            <Text>History</Text>
+            <Text>Notifications</Text>
         </View>
     )
 }

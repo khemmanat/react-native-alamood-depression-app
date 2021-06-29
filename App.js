@@ -15,7 +15,7 @@ import { Platform } from 'react-native';
 // Import Screens from files
 
 import HomeScreen from './src/homepage';
-import SettingScreen from './src/setting_page';
+import ProfileScreen from './src/profile_page';
 import TherapyScreen from './src/therapy_page';
 import DepressScreen from './src/depression_page';
 import ActionScreen from './src/action_page';
@@ -32,7 +32,7 @@ export default function  App() {
         showLabel: false,
         // Floating Tab Bar..
         style:{
-          backgroundColor: '#D6ECCB',
+          backgroundColor: 'white',
           position: 'absolute',
           bottom: 30,
           marginHorizontal: 20 ,
@@ -149,7 +149,7 @@ export default function  App() {
                 // centring Tab Button...
                 alignItems: 'center',
                 justifyContent: 'center',
-                top: 15
+                top: 15,
               }}>
                 <FontAwesome5
                 name="briefcase-medical"
@@ -172,7 +172,7 @@ export default function  App() {
         })}></Tab.Screen>
 
 
-        <Tab.Screen name={"Settings"} component= {SettingScreen} options={{
+        <Tab.Screen name={"Settings"} component= {ProfileScreen} options={{
           tabBarIcon: ({focused}) =>(
               <View style={{
                 // centring Tab Button...
@@ -181,13 +181,13 @@ export default function  App() {
                 top: 15
               }}>
                 <FontAwesome5
-                name="cog"
+                name="user-alt"
                 size={20}
                 color={focused ? 'red': 'gray'}
                 >
 
                 </FontAwesome5>
-                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Settings</Text>
+                <Text style={{color: focused ? 'red': 'gray' ,fontSize: 10}}>Profile</Text>
               </View>
           )
         }} listeners={({navigation, route}) => ({
