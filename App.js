@@ -14,10 +14,10 @@ import { Platform } from 'react-native';
 
 // Import Screens from files
 
-import HomeScreen from './src/homepage';
-import ProfileScreen from './src/profile_page';
-import TherapyScreen from './src/therapy_page';
-import DepressScreen from './src/depression_page';
+import HomeScreen from './src/mainscreen/homepage';
+import ProfileScreen from './src/mainscreen/profile_page';
+import TherapyScreen from './src/mainscreen/therapy_page';
+import DepressScreen from './src/mainscreen/depression_page';
 import ActionScreen from './src/action_page';
 
 const Tab = createBottomTabNavigator();
