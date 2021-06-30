@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { Animated, Dimensions, Image,StyleSheet, View, Button , SafeAreaView } from 'react-native';
+import { Linking, Platform,Animated, Dimensions, Image,StyleSheet, View, Button , SafeAreaView } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,6 +13,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import HistoryScreen from '../profile/history_page';
 
 export default function ProfileScreen(){
+
+    const dialCall = (number) => {
+        let phoneNumber ='';
+        if (Platform.OS === 'android') {phoneNumber = `tel:${number}`;}
+        else {phoneNumber = `telprompt:${number}`;}
+        Linking.openURL(phoneNumber);
+    };
+
     return(
         // <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#ECEAE4'}}>
         //     <Text>History</Text>
@@ -94,14 +102,22 @@ export default function ProfileScreen(){
             </View>
 
             <View style={styles.menuWrapper}>
-                <TouchableRipple onPress={() => {}}>
+
+            <TouchableRipple onPress={() => {Linking.openURL('tel:0957270217')}}>
                     <View style={styles.menuItem}>
-                        <FontAwesome5 name="heart" color='#FF6347' size={25}></FontAwesome5>
-                        <Text style={styles.menuItemText}>Your Favourites</Text>
+                        <FontAwesome5 name="phone-alt" color='#000000' size={25}></FontAwesome5>
+                        <Text style={styles.menuItemText}>Consulting Call</Text>
                     </View>
                 </TouchableRipple>
 
-                <TouchableRipple onPress={HistoryScreen}>
+                <TouchableRipple onPress={() => {}}>
+                    <View style={styles.menuItem}>
+                        <FontAwesome5 name="poll" color='#FF6347' size={25}></FontAwesome5>
+                        <Text style={styles.menuItemText}>Results</Text>
+                    </View>
+                </TouchableRipple>
+
+                <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="history" color='#000000' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>History</Text>
@@ -110,8 +126,8 @@ export default function ProfileScreen(){
 
                 <TouchableRipple onPress={() => {}}>
                     <View style={styles.menuItem}>
-                        <FontAwesome5 name="heart" color='#FF6347' size={25}></FontAwesome5>
-                        <Text style={styles.menuItemText}>Your Favourites</Text>
+                        <FontAwesome5 name="question-circle" color='#FF6347' size={25}></FontAwesome5>
+                        <Text style={styles.menuItemText}>Support</Text>
                     </View>
                 </TouchableRipple>
 
@@ -121,6 +137,8 @@ export default function ProfileScreen(){
                         <Text style={styles.menuItemText}>Settings</Text>
                     </View>
                 </TouchableRipple>
+
+                
             </View>
         </SafeAreaView>
     );
