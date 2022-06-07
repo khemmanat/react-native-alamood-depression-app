@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Animated, Dimensions, Image,StyleSheet, Text, View, Button ,ScrollView, SafeAreaView,Card} from 'react-native';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { render } from 'react-dom';
 
@@ -10,17 +10,8 @@ import { render } from 'react-dom';
 
 // const { height } = Dimensions.get('window');
 
-export default function DepressScreen(){
+const DepressScreen = (props) => {
 
-    // state = {
-    //     screenHeight : 0,
-    // };
-
-    // onContentSizeChange = (contentWidth, contentHeight) =>{
-    //     this.setState({screenHeight: contentHeight})
-    // };
-
-        // const scrollEnabled = this.state.screenHeight > height;
         return(
             <SafeAreaView style={styles.container}>
                 <StatusBar barstyle="light-content" backgroundColor="#468189"/>
@@ -98,3 +89,5 @@ const styles = StyleSheet.create({
         fontSize: 20
     }
 })
+
+export default DepressScreen;

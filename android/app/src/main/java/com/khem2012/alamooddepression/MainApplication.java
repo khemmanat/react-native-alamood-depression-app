@@ -3,6 +3,7 @@ package com.khem2012.alamooddepression;
 import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
@@ -13,6 +14,8 @@ import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.khem2012.alamooddepression.generated.BasePackageList;
 
+import org.devio.rn.splashscreen.SplashScreen;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import org.unimodules.adapters.react.ReactAdapterPackage;
 import org.unimodules.adapters.react.ModuleRegistryAdapter;
 import org.unimodules.adapters.react.ReactModuleRegistryProvider;
@@ -46,6 +49,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
+      packages.add(new SplashScreenReactPackage());
       return packages;
     }
 
@@ -85,7 +89,8 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
-    super.onCreate();
+    SplashScreen.show(this);
+    super.onCreate(savedInstanceState);
     SoLoader.init(this, /* native exopackage */ false);
 
     if (!BuildConfig.DEBUG) {

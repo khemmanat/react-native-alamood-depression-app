@@ -2,12 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Animated, Dimensions, Image,StyleSheet, Text, View, Button ,SafeAreaView, ScrollView} from 'react-native';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Font Awesome Icons...
 
-export default function TherapyScreen(){
+const  TherapyScreen = (props) =>{
     return(
         <SafeAreaView style={styles.container}>
             <StatusBar barstyle="light-content" backgroundColor="#468189"/>
@@ -57,3 +57,5 @@ insideText :{
     fontSize: 20
 }
 })
+
+export default TherapyScreen;

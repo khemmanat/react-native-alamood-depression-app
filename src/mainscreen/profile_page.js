@@ -1,32 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { Linking, Platform,Animated, Dimensions, Image,StyleSheet, View, Button , SafeAreaView } from 'react-native';
+import { Linking, Platform,Animated, Dimensions, Image,StyleSheet, View, Button , SafeAreaView , TouchableOpacity} from 'react-native';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Avatar, Title, Caption, Text, TouchableRipple } from 'react-native-paper';
+import { createStackNavigator} from '@react-navigation/stack';
 
 import { FontAwesome5 } from '@expo/vector-icons';
 
 // Font Awesome Icons...
 
 import HistoryScreen from '../profile/history_page';
+import ResultScreen from '../profile/result_page';
+import SupportScreen from '../profile/support_page';
+import SettingScreen from '../profile/setting_page';
 
-export default function ProfileScreen(){
 
-    const dialCall = (number) => {
-        let phoneNumber ='';
-        if (Platform.OS === 'android') {phoneNumber = `tel:${number}`;}
-        else {phoneNumber = `telprompt:${number}`;}
-        Linking.openURL(phoneNumber);
-    };
 
+const ProfileScreen = ({navigation}) => {
+    // const { navigate } = this.props.navigation;
     return(
-        // <View style={{ flex:1 , justifyContent: 'center',alignItems: 'center',backgroundColor: '#ECEAE4'}}>
-        //     <Text>History</Text>
-        //     <Text>Notifications</Text>
-        // </View>
-        // <Box></Box>
+        
         <SafeAreaView style={styles.container}>
             <View style={styles.userInfoSection}>
                 <View style={{flexDirection: 'row', marginTop: 15}}>
@@ -100,43 +95,47 @@ export default function ProfileScreen(){
                 </View>
                 
             </View>
-
+            
             <View style={styles.menuWrapper}>
-
-            <TouchableRipple onPress={() => {Linking.openURL('tel:0957270217')}}>
+            
+            <TouchableOpacity onPress={() => {Linking.openURL('tel:1323')}}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="phone-alt" color='#000000' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>Consulting Call</Text>
                     </View>
-                </TouchableRipple>
+                </TouchableOpacity>
 
-                <TouchableRipple onPress={() => {}}>
+                <TouchableOpacity onPress={() => {
+                    <View>
+                        <ResultScreen/>
+                    </View>
+                    }}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="poll" color='#FF6347' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>Results</Text>
                     </View>
-                </TouchableRipple>
+                </TouchableOpacity>
 
-                <TouchableRipple onPress={() => {}}>
+                <TouchableOpacity onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="history" color='#000000' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>History</Text>
                     </View>
-                </TouchableRipple>
+                </TouchableOpacity>
 
-                <TouchableRipple onPress={() => {}}>
+                <TouchableOpacity onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="question-circle" color='#FF6347' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>Support</Text>
                     </View>
-                </TouchableRipple>
+                </TouchableOpacity>
 
-                <TouchableRipple onPress={() => {}}>
+                <TouchableOpacity onPress={() => {}}>
                     <View style={styles.menuItem}>
                         <FontAwesome5 name="cog" color='#000000' size={25}></FontAwesome5>
                         <Text style={styles.menuItemText}>Settings</Text>
                     </View>
-                </TouchableRipple>
+                </TouchableOpacity>
 
                 
             </View>
@@ -153,7 +152,6 @@ const styles = StyleSheet.create({
     userInfoSection: {
         paddingHorizontal: 30,
         marginBottom: 25,
-
     },
     title: {
         fontSize: 24,
@@ -197,3 +195,5 @@ const styles = StyleSheet.create({
         lineHeight: 26
     },
 });
+
+export default ProfileScreen;
